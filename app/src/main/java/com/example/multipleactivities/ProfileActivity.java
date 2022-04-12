@@ -43,7 +43,8 @@ private Button signout;
         signout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("==>", "Sign out");
+                Log.d("==>", "Sign out pressed.");
+                finish();
             }
         });
     }

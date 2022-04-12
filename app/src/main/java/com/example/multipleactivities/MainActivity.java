@@ -7,9 +7,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
     private Button signin;
+    private EditText username;
     @Override
     protected void onPostResume() {
         super.onPostResume();
@@ -39,11 +41,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.d("==>", "MainActivity created.");
+
+        username = findViewById(R.id.signin_name);
+
+
         signin = findViewById(R.id.button);
         signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.d("==>", "Du har klickat på knappen");
+                Log.d("==>", "Username:"+username.getText().toString());
            Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
            startActivity(intent);
             }
